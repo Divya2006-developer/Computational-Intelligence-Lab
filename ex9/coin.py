@@ -1,17 +1,26 @@
-def make_amount(rupees_to_make,no_of_five,no_of_one):
-    five_needed=0
-    one_needed=0
-    f=rupees_to_make//5
-    o=rupees_to_make%5
-    if(f <= no_of_five and o <= no_of_one):
-        five_needed=f
-        one_needed=o
-        print(five_needed)
-        print(one_needed)
-    else:
-        print("-1")
+import random
 
-rupees_to_make=19
-no_of_five=3
-no_of_one=3
-make_amount(rupees_to_make,no_of_five,no_of_one)
+def coin_toss_probability():
+    n = int(input("Enter the number of coin tosses: "))
+
+    heads = 0
+    tails = 0
+
+    for i in range(n):
+        toss = random.choice(['H', 'T'])
+        print(f"Toss {i+1}: {toss}")
+
+        if toss == 'H':
+            heads += 1
+        else:
+            tails += 1
+
+    print("\nResults:")
+    print("Number of Heads:", heads)
+    print("Number of Tails:", tails)
+
+    print("\nProbabilities:")
+    print("P(Heads) =", heads / n)
+    print("P(Tails) =", tails / n)
+
+coin_toss_probability()
